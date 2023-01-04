@@ -15,16 +15,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         AppCenter.start(
-            application, "2e62058c-ceeb-4f64-a11d-43d9c2a250f5",
+            application, "8dc87273-55e3-47c9-af9c-1b83c1805801",
             Analytics::class.java, Crashes::class.java
         )
 
         findViewById<TextView>(R.id.btnTest).setOnClickListener {
             val properties = mutableMapOf(Pair("name", "amir"), Pair("surname", "ziarati"), Pair("age", "34"),)
-
             Analytics.trackEvent("button clicked", properties)
             Toast.makeText(this@MainActivity, "event sent", Toast.LENGTH_LONG).show()
-
 //            Crashes.generateTestCrash()
         }
     }
