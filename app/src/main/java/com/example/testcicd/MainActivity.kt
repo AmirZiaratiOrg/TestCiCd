@@ -21,10 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.btnTest).setOnClickListener {
             val properties = mutableMapOf(Pair("name", "amir"), Pair("surname", "ziarati"), Pair("age", "34"),)
-
             Analytics.trackEvent("button clicked", properties)
             Toast.makeText(this@MainActivity, "event sent", Toast.LENGTH_LONG).show()
-
 //            Crashes.generateTestCrash()
         }
     }
